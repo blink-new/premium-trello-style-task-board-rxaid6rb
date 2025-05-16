@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import GT Walsheim */
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap');
+/* Import Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Base */
+    --background: 220 33% 98%; /* Soft Gray (#F5F7FA) */
+    --foreground: 0 0% 18%; /* Charcoal (#2E2E2E) */
+    
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 18%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+    
+    /* Primary - Slate Blue */
+    --primary: 222 36% 45%; /* Slate Blue (#4A5A99) */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary */
+    --secondary: 220 33% 98%;
+    --secondary-foreground: 222 36% 45%;
+    
+    /* Muted */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+    
+    /* Accent - Coral Orange */
+    --accent: 10 100% 68%; /* Coral Orange (#FF6F59) */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Border */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 222 36% 45%;
+    
+    /* Card Shadow - Ice Blue */
+    --card-shadow: 203 55% 91%; /* Ice Blue (#D7E9F7) */
+    
+    /* Charts */
+    --chart-1: 222 36% 45%; /* Slate Blue */
+    --chart-2: 10 100% 68%; /* Coral Orange */
+    --chart-3: 203 55% 91%; /* Ice Blue */
+    --chart-4: 203 55% 70%;
+    --chart-5: 222 36% 65%;
+    
+    --radius: 0.5rem;
+    
+    /* Sidebar */
+    --sidebar-background: 222 36% 45%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 222 36% 45%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 36% 45%;
+    --sidebar-border: 222 36% 55%;
+    --sidebar-ring: 222 36% 65%;
+  }
+  
+  .dark {
+    --background: 222 28% 12%;
+    --foreground: 0 0% 98%;
+    
+    --card: 222 25% 16%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 222 25% 16%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 222 36% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 222 25% 24%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 222 25% 24%;
+    --muted-foreground: 220 8% 70%;
+    
+    --accent: 10 100% 68%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 222 25% 24%;
+    --input: 222 25% 24%;
+    --ring: 222 36% 65%;
+    
+    --card-shadow: 222 28% 7%;
+    
+    --chart-1: 222 36% 45%;
+    --chart-2: 10 100% 68%;
+    --chart-3: 203 55% 91%;
+    --chart-4: 203 55% 70%;
+    --chart-5: 222 36% 65%;
+    
+    --sidebar-background: 222 28% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 222 36% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 25% 24%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 222 25% 20%;
+    --sidebar-ring: 222 36% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .card-shadow {
+    box-shadow: 0 4px 14px -4px hsl(var(--card-shadow) / 0.5);
+  }
+  
+  .card-shadow-hover {
+    transition: all 0.2s ease;
+  }
+  
+  .card-shadow-hover:hover {
+    box-shadow: 0 8px 24px -4px hsl(var(--card-shadow) / 0.6);
+    transform: translateY(-2px);
+  }
+}
