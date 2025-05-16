@@ -29,13 +29,13 @@ export function Sidebar({ isOpen, onClose, className }: SidebarProps) {
   return (
     <aside 
       className={cn(
-        'fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r bg-background transition-transform lg:static',
+        'fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r bg-background transition-transform lg:static dark:border-slate-800',
         isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
         className
       )}
     >
       {/* Sidebar Header */}
-      <div className="flex h-16 items-center gap-2 border-b px-4">
+      <div className="flex h-16 items-center gap-2 border-b px-4 dark:border-slate-800">
         <div className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-white">
             <LayoutDashboard className="h-5 w-5" />
@@ -116,7 +116,7 @@ export function Sidebar({ isOpen, onClose, className }: SidebarProps) {
         <div className="flex flex-col gap-1 px-1 py-2">
           <div className="flex -space-x-2">
             {board.members.slice(0, 4).map((member) => (
-              <Avatar key={member.id} className="h-8 w-8 border-2 border-background">
+              <Avatar key={member.id} className="h-8 w-8 border-2 border-background dark:border-slate-900">
                 <AvatarImage src={member.avatarUrl} alt={member.name} />
                 <AvatarFallback className="text-xs">
                   {member.name.split(' ').map(n => n[0]).join('')}
@@ -125,7 +125,7 @@ export function Sidebar({ isOpen, onClose, className }: SidebarProps) {
             ))}
             
             {board.members.length > 4 && (
-              <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-background bg-muted text-xs font-medium">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-background bg-muted text-xs font-medium dark:border-slate-900">
                 +{board.members.length - 4}
               </div>
             )}
@@ -139,7 +139,7 @@ export function Sidebar({ isOpen, onClose, className }: SidebarProps) {
       </nav>
       
       {/* Footer */}
-      <div className="border-t p-4">
+      <div className="border-t p-4 dark:border-slate-800">
         <Button variant="ghost" className="w-full justify-start">
           <Settings className="mr-2 h-4 w-4" />
           Settings

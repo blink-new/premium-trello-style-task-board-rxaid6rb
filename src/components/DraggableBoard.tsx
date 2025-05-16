@@ -119,10 +119,10 @@ export function DraggableBoard({ className }: DraggableBoardProps) {
             
             {/* Add Column Form */}
             {isAddingColumn ? (
-              <div className="flex h-fit min-w-[280px] flex-col rounded-lg border bg-card p-3">
+              <div className="flex h-fit min-w-[280px] flex-col rounded-lg border bg-card p-3 dark:border-slate-800">
                 <input
                   type="text"
-                  className="w-full rounded border border-input bg-transparent p-2 text-sm focus:outline-none focus:ring-1 focus:ring-ring"
+                  className="w-full rounded border border-input bg-transparent p-2 text-sm focus:outline-none focus:ring-1 focus:ring-ring dark:border-slate-700"
                   placeholder="Enter column title..."
                   value={newColumnTitle}
                   onChange={(e) => setNewColumnTitle(e.target.value)}
@@ -156,7 +156,7 @@ export function DraggableBoard({ className }: DraggableBoardProps) {
               <div className="flex h-fit min-w-[280px] items-center">
                 <Button
                   variant="outline"
-                  className="border-dashed w-full"
+                  className="border-dashed w-full dark:border-slate-700"
                   onClick={() => setIsAddingColumn(true)}
                 >
                   <Plus className="mr-2 h-4 w-4" />

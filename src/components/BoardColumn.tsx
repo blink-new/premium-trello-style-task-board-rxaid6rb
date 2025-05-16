@@ -39,11 +39,11 @@ export function BoardColumn({ column, className }: BoardColumnProps) {
   
   return (
     <div className={cn(
-      'flex h-full min-w-[280px] flex-col rounded-lg border bg-background',
+      'flex h-full min-w-[280px] flex-col rounded-lg border bg-background dark:border-slate-800',
       className
     )}>
       {/* Column Header */}
-      <div className="flex items-center justify-between border-b px-3 py-2">
+      <div className="flex items-center justify-between border-b px-3 py-2 dark:border-slate-800">
         <div 
           className="flex items-center gap-2 cursor-pointer" 
           onClick={() => toggleCollapseColumn(column.id)}
@@ -56,7 +56,7 @@ export function BoardColumn({ column, className }: BoardColumnProps) {
             <h3 className="text-sm font-medium">{column.title}</h3>
           </div>
           
-          <Badge variant="outline" className="font-mono text-xs">
+          <Badge variant="outline" className="font-mono text-xs dark:border-slate-700">
             {column.tasks.length}{column.limit ? `/${column.limit}` : ''}
           </Badge>
           
@@ -90,7 +90,7 @@ export function BoardColumn({ column, className }: BoardColumnProps) {
         <div className="flex flex-col gap-2 overflow-y-auto p-3 scrollbar-thin">
           {/* Add Task Input */}
           {isAddingTask && (
-            <div className="mb-1 rounded-md border bg-card p-2 shadow-sm">
+            <div className="mb-1 rounded-md border bg-card p-2 shadow-sm dark:border-slate-700">
               <input
                 type="text"
                 className="w-full rounded border-0 bg-transparent p-1 text-sm focus:outline-none focus:ring-1 focus:ring-primary/30"
@@ -134,7 +134,7 @@ export function BoardColumn({ column, className }: BoardColumnProps) {
           
           {/* Empty State */}
           {column.tasks.length === 0 && !isAddingTask && (
-            <div className="flex flex-col items-center justify-center rounded-md border border-dashed p-4 text-center">
+            <div className="flex flex-col items-center justify-center rounded-md border border-dashed p-4 text-center dark:border-slate-700">
               <p className="text-sm text-muted-foreground">No tasks yet</p>
               <Button 
                 variant="ghost" 

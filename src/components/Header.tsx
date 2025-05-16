@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { useBoard } from '../context/BoardContext';
+import { ThemeToggle } from './ui/theme-toggle'; // Import ThemeToggle
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -53,12 +54,12 @@ export function Header({ onMenuClick, className }: HeaderProps) {
 
       {/* Right side: Actions and user */}
       <div className="flex items-center gap-2">
-        <Button variant="ghost" size="icon" className="text-slate-500 hover:text-slate-600">
+        <Button variant="ghost" size="icon" className="text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
           <Calendar className="h-5 w-5" />
           <span className="sr-only">Calendar</span>
         </Button>
         
-        <Button variant="ghost" size="icon" className="text-slate-500 hover:text-slate-600">
+        <Button variant="ghost" size="icon" className="text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
           <Filter className="h-5 w-5" />
           <span className="sr-only">Filter</span>
         </Button>
@@ -68,21 +69,24 @@ export function Header({ onMenuClick, className }: HeaderProps) {
           <span>New Task</span>
         </Button>
         
-        <Button variant="ghost" size="icon" className="relative text-slate-500 hover:text-slate-600">
+        <Button variant="ghost" size="icon" className="relative text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
           <Bell className="h-5 w-5" />
           <span className="sr-only">Notifications</span>
           <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-accent" />
         </Button>
 
-        <Button variant="ghost" size="icon" className="hidden text-slate-500 hover:text-slate-600 sm:flex">
+        <Button variant="ghost" size="icon" className="hidden text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300 sm:flex">
           <Users className="h-5 w-5" />
           <span className="sr-only">Team</span>
         </Button>
         
-        <Button variant="ghost" size="icon" className="hidden text-slate-500 hover:text-slate-600 sm:flex">
+        <Button variant="ghost" size="icon" className="hidden text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300 sm:flex">
           <Settings className="h-5 w-5" />
           <span className="sr-only">Settings</span>
         </Button>
+        
+        {/* Theme Toggle */}
+        <ThemeToggle />
         
         <div className="ml-2 flex items-center">
           <Avatar className="h-8 w-8 transition-all hover:scale-105">
