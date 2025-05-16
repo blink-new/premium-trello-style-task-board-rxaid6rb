@@ -3,7 +3,7 @@ import { BoardProvider } from './context/BoardContext';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import DraggableBoard from './components/DraggableBoard';
-import { Toaster } from './components/ui/toaster';
+// import { Toaster } from './components/ui/toaster'; // Removed, as it's in main.tsx
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -26,7 +26,7 @@ function App() {
           </main>
         </div>
       </div>
-      <Toaster />
+      {/* <Toaster /> */}{/* Removed, as it's in main.tsx */}
     </BoardProvider>
   );
 }
